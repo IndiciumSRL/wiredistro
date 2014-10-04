@@ -1,0 +1,12 @@
+Source: wirephone-sshd-config
+Section: config
+Priority: extra
+Maintainer: Indicium SRL <info@indicium.com.ar>
+Build-Depends: debhelper (>= 4.2.0)
+Standards-Version: 3.8.0
+
+Package: wirephone-sshd-config
+Architecture: all
+Depends: ${misc:Depends}, openssh-server
+Description: OpenSSH Server config
+ OpenSSH Server Wirephone Custom Configuration file.

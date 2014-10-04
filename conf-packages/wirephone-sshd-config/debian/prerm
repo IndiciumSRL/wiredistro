@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+PKG=wirephone-sshd-config
+if [ "$1" = remove ] ; then
+	[ -L /etc/ssh/sshd_config ] && rm /etc/ssh/sshd_config
+	dpkg-divert --remove --package ${PKG} --rename \
+		--divert /etc/ssh/sshd_config.distrib /etc/ssh/sshd_config
+fi
+#DEBHELPER#
+exit 0

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+PKG=wirephone-sshd-config
+
+if [ "$1" = configure ] ; then
+	dpkg-divert --add --package ${PKG} --rename \
+		--divert /etc/ssh/sshd_config.distrib /etc/ssh/sshd_config
+	[ \! -e /etc/ssh/sshd_config -o -L /etc/ssh/sshd_config ] && ln -sf /etc/site/ssh/sshd_config /etc/ssh/sshd_config
+	invoke-rc.d ssh restart
+fi
+#DEBHELPER#
+exit 0
