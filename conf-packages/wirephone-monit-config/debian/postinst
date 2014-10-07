@@ -2,13 +2,13 @@
 
 set -e
 
-PKG=wirephone-sshd-config
+PKG=wirephone-monit-config
 
 if [ "$1" = configure ] ; then
 	dpkg-divert --add --package ${PKG} --rename \
-		--divert /etc/ssh/sshd_config.distrib /etc/ssh/sshd_config
-	[ \! -e /etc/ssh/sshd_config -o -L /etc/ssh/sshd_config ] && ln -sf /etc/site/ssh/sshd_config /etc/ssh/sshd_config
-	invoke-rc.d ssh restart
+		--divert /etc/monit/monitrc.distrib /etc/monit/monitrc
+	[ \! -e /etc/monit/monitrc -o -L /etc/monit/monitrc ] && ln -sf /etc/site/monit/monitrc /etc/monit/monitrc
+	invoke-rc.d monit restart
 fi
 #DEBHELPER#
 exit 0

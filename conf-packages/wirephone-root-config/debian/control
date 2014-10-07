@@ -1,0 +1,12 @@
+Source: wirephone-root-config
+Section: config
+Priority: extra
+Maintainer: Indicium SRL <info@indicium.com.ar>
+Build-Depends: debhelper (>= 4.2.0)
+Standards-Version: 3.8.0
+
+Package: wirephone-root-config
+Architecture: all
+Depends: ${misc:Depends}, vim, less, screen
+Description: Root configuration files 
+ Root configuration files such as bashrc and other pub keys 
