@@ -1,0 +1,7 @@
+*/debian/files
+*/debian/*debhelper.log
+*/debian/*.substvars
+*.dsc
+*.changes
+*.tar.gz
+*.deb

@@ -1,0 +1,22 @@
+Section: comm
+Priority: optional
+Homepage: http://www.wirephone.net
+Standards-Version: 3.9.2
+
+Package: wirephone-suite
+Version: 1.0
+Maintainer: Indicium SRL <info@indicium.com.ar>
+Depends:
+	python-wirephone,
+	python-wirerouting,
+	python-wiregui,
+	wirephone-polycom-fw,
+	wirephone-polycom-default-templates,
+	wirephone-monit-config,
+	wirephone-root-config,
+	wirephone-sshd-config
+
+Architecture: all
+Description: Wirephone Suite Meta Package
+ Provides means to install all packages related to wirephon-suite.
+

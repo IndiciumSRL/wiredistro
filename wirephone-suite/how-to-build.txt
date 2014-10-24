@@ -1,0 +1,1 @@
+equivs-build ns-control
