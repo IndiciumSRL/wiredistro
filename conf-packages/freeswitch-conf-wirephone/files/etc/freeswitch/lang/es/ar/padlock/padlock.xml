@@ -1,0 +1,69 @@
+<include>
+    <macro name="padlock_not_available">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="misc/funcion_no_habilitada.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_enter_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="misc/ingrese_clave.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_enter_new_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="misc/clave_nueva.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_is_active">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="padlock/candado_activado.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_is_not_active">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="padlock/candado_desactivado.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_pin_saved">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="padlock/clave_guardada.wav"/>
+          <action function="execute" data="sleep(500)"/>
+          <action function="say" data="$1" method="iterated" type="number"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_max_tries">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="vm/vm-abort.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="padlock_bad_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="misc/clave_incorrecta.wav"/>
+        </match>
+      </input>
+    </macro>
+</include>

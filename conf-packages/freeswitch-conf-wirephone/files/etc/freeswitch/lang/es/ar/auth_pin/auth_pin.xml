@@ -1,0 +1,64 @@
+<include>
+    <macro name="auth_pin_invalid_user">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="auth_pin/usuario_invalido.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_enter_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="misc/ingrese_clave.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_bad_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="misc/clave-incorrecta.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_saved">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="padlock/clave_guardada.wav"/>
+          <action function="execute" data="sleep(500)"/>
+          <action function="say" data="$1" method="iterated" type="number"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_max_tries">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="vm/vm-abort.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_error">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="misc/consulte_con.wav"/>
+          <action function="play-file" data="misc/administrador.wav"/>
+        </match>
+      </input>
+    </macro>
+
+    <macro name="auth_pin_not_available">
+      <input pattern="(.*)">
+        <match>
+          <action function="execute" data="sleep(1000)"/>
+          <action function="play-file" data="misc/funcion_no_habilitada.wav"/>
+        </match>
+      </input>
+    </macro>
+</include>
