@@ -8,12 +8,12 @@ Standards-Version: 3.8.0
 Package: freeswitch-conf-wirephone
 Architecture: all
 Depends: ${misc:Depends}
+  freeswitch,
   freeswitch-mod-voicemail,
   freeswitch-mod-sofia,
   freeswitch-mod-loopback,
   freeswitch-mod-dialplan-xml,
   freeswitch-mod-hash,
-  freeswitch,
   freeswitch-mod-commands,
   freeswitch-mod-conference,
   freeswitch-mod-db,

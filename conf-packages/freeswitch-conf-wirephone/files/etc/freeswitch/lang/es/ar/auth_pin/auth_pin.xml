@@ -25,11 +25,19 @@
       </input>
     </macro>
 
+    <macro name="auth_pin_enter_new_pin">
+      <input pattern="(.*)">
+        <match>
+          <action function="play-file" data="misc/clave_nueva.wav"/>
+        </match>
+      </input>
+    </macro>
+
+
     <macro name="auth_pin_saved">
       <input pattern="(.*)">
         <match>
-          <action function="play-file" data="padlock/clave_guardada.wav"/>
-          <action function="execute" data="sleep(500)"/>
+          <action function="play-file" data="misc/clave_guardada.wav"/>
           <action function="say" data="$1" method="iterated" type="number"/>
         </match>
       </input>

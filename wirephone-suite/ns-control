@@ -9,12 +9,13 @@ Maintainer: Indicium SRL <info@indicium.com.ar>
 Depends:
 	python-wirephone,
 	python-wirerouting,
-	python-wiregui,
+	python-wiregui-server,
 	wirephone-polycom-fw,
 	wirephone-polycom-default-templates,
 	wirephone-monit-config,
 	wirephone-root-config,
-	wirephone-sshd-config
+	wirephone-sshd-config,
+	wirephone-fail2ban-config
 
 Architecture: all
 Description: Wirephone Suite Meta Package

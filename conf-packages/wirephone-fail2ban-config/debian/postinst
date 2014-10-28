@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+PKG=wirephone-fail2ban-config
+
+if [ "$1" = configure ] ; then
+	dpkg-divert --add --package ${PKG} --rename \
+		--divert /etc/fail2ban/jail.conf.distrib /etc/fail2ban/jail.conf
+	[ \! -e /etc/fail2ban/jail.conf -o -L /etc/fail2ban/jail.conf ] && ln -sf /etc/site/fail2ban/jail.conf /etc/fail2ban/jail.conf
+	invoke-rc.d fail2ban restart
+fi
+#DEBHELPER#
+exit 0
