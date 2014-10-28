@@ -54,7 +54,7 @@
     <macro name="padlock_max_tries">
       <input pattern="(.*)">
         <match>
-          <action function="play-file" data="vm/vm-abort.wav"/>
+          <action function="play-file" data="voicemail/vm-abort.wav"/>
         </match>
       </input>
     </macro>

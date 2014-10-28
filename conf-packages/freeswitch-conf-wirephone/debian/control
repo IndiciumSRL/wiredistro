@@ -9,6 +9,7 @@ Package: freeswitch-conf-wirephone
 Architecture: all
 Depends: ${misc:Depends}
   freeswitch,
+  freeswitch-sysv-init,
   freeswitch-mod-voicemail,
   freeswitch-mod-sofia,
   freeswitch-mod-loopback,
@@ -41,6 +42,8 @@ Depends: ${misc:Depends}
   freeswitch-mod-xml-cdr,
   freeswitch-mod-xml-curl,
   freeswitch-mod-ilbc,
-  freeswitch-mod-siren
+  freeswitch-mod-siren,
+  wirephone-monit-config,
+  wirephone-fail2ban-config
 Description: FreeSWITCH Wirephone config
  FreeSWITCH Wirephone Config
