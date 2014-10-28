@@ -3,7 +3,7 @@
       <input pattern="(.*)">
         <match>
           <action function="execute" data="sleep(1000)"/>
-          <action function="play-file" data="auth_pin/usuario_invalido.wav"/>
+          <action function="play-file" data="padlock/usuario_invalido.wav"/>
         </match>
       </input>
     </macro>
