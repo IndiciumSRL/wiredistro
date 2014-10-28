@@ -44,7 +44,7 @@
     <macro name="padlock_pin_saved">
       <input pattern="(.*)">
         <match>
-          <action function="play-file" data="padlock/clave_guardada.wav"/>
+          <action function="play-file" data="misc/clave_guardada.wav"/>
           <action function="execute" data="sleep(500)"/>
           <action function="say" data="$1" method="iterated" type="number"/>
         </match>
