@@ -7,6 +7,6 @@ Standards-Version: 3.8.0
 
 Package: wirephone-monit-config
 Architecture: all
-Depends: ${misc:Depends}, monit 
+Depends: ${misc:Depends}, monit, freeswitch 
 Description: Monit Server config
  Monit configuration and other monitoring files. 
