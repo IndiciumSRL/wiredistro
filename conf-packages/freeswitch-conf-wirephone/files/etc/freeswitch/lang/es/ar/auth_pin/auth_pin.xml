@@ -20,7 +20,7 @@
     <macro name="auth_pin_bad_pin">
       <input pattern="(.*)">
         <match>
-          <action function="play-file" data="misc/clave-incorrecta.wav"/>
+          <action function="play-file" data="misc/clave_incorrecta.wav"/>
         </match>
       </input>
     </macro>
