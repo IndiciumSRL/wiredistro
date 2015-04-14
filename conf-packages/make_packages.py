@@ -20,6 +20,9 @@ def build(distro, arch, package=None):
     print 'Updating cow image.'
     subprocess.check_call(['cowbuilder', '--update', '--distribution', distro, '--architecture', arch, '--basepath', f])
     for d in list_my_dirs():
+        if package is not None and d != package:
+            print 'Skipping ', d
+            continue
         print 'Generating packages for %s' % d
 	version = '0.1'
 	with open(os.path.join(d, 'debian/changelog')) as changefile:
