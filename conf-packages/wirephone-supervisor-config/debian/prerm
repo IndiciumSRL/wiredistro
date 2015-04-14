@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+PKG=wirephone-fail2ban-config
+if [ "$1" = remove ] ; then
+	[ -L /etc/fail2ban/jail.conf ] && rm /etc/fail2ban/jail.conf
+	dpkg-divert --remove --package ${PKG} --rename \
+		--divert /etc/fail2ban/jail.conf.distrib /etc/fail2ban/jail.conf
+fi
+#DEBHELPER#
+exit 0

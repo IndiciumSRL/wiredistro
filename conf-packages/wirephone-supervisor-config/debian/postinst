@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+PKG=wirephone-supervisor-config
+
+if [ "$1" = configure ] ; then
+	dpkg-divert --add --package ${PKG} --rename \
+		--divert /etc/supervisor/supervisord.conf.distrib /etc/supervisor/supervisord.conf
+	[ \! -e /etc/supervisor/supervisord.conf -o -L /etc/supervisor/supervisord.conf ] && ln -sf /etc/site/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+	invoke-rc.d supervisor restart
+fi
+#DEBHELPER#
+exit 0
