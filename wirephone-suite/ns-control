@@ -4,16 +4,21 @@ Homepage: http://www.wirephone.net
 Standards-Version: 3.9.2
 
 Package: wirephone-suite
-Version: 1.0
+Version: 1.0-1
 Maintainer: Indicium SRL <info@indicium.com.ar>
 Depends:
 	python-wirephone,
 	python-wirerouting,
+	python-wiremonitor,
 	python-wiregui-server,
 	wirephone-polycom-fw,
 	wirephone-polycom-default-templates,
 	wirephone-root-config,
-	wirephone-sshd-config
+	wirephone-sshd-config,
+        freeswitch-conf-wirephone,
+        python-esl,
+        supervisor,
+        fail2ban
 
 Architecture: all
 Description: Wirephone Suite Meta Package
