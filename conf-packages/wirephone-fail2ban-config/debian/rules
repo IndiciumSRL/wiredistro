@@ -5,4 +5,4 @@
 
 override_dh_binary-arch: build install
 	dh_installdeb
-	sed '/monitrc/d' debian/wirephone-monit-config/DEBIAN/conffiles       
+	rm debian/wirephone-fail2ban-config/DEBIAN/conffiles
