@@ -46,7 +46,7 @@ def build(distro, arch, package=None):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 2:
+    if len(sys.argv) >= 2:
         failed = build('wheezy', 'amd64', sys.argv[1])
     else:
         failed = build('wheezy', 'amd64')
