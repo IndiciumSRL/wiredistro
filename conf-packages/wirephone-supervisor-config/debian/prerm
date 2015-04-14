@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
-PKG=wirephone-fail2ban-config
+PKG=wirephone-supervisor-config
 if [ "$1" = remove ] ; then
-	[ -L /etc/fail2ban/jail.conf ] && rm /etc/fail2ban/jail.conf
+	[ -L /etc/supervisor/supervisord.conf ] && rm /etc/supervisor/supervisord.conf
 	dpkg-divert --remove --package ${PKG} --rename \
-		--divert /etc/fail2ban/jail.conf.distrib /etc/fail2ban/jail.conf
+		--divert /etc/supervisor/supervisord.conf.distrib /etc/supervisor/supervisord.conf
 fi
 #DEBHELPER#
 exit 0

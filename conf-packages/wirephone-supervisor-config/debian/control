@@ -1,4 +1,4 @@
-Source: wirephone-fail2ban-config
+Source: wirephone-supervisor-config
 Section: config
 Priority: extra
 Maintainer: Indicium SRL <info@indicium.com.ar>
@@ -7,6 +7,6 @@ Standards-Version: 3.8.0
 
 Package: wirephone-fail2ban-config
 Architecture: all
-Depends: ${misc:Depends}, fail2ban 
-Description: Fail2ban Server config
- Fail2ban monitoring. 
+Depends: ${misc:Depends}, supervisor 
+Description: Supervisor config
+ Supervisor monitoring. 
