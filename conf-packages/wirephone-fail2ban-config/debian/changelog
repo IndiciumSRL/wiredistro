@@ -1,3 +1,9 @@
+wirephone-fail2ban-config (0.2) unstable; urgency=low
+
+  * Remove freeswitch filter since new version of fail2ban includes it
+  * Fix the path where the log is placed. 
+
+ -- IndiciumSRL <info@indicium.com.ar>  Fri, 17 Apr 2015 10:23:50 -0300
 wirephone-fail2ban-config (0.1) unstable; urgency=low
 
   * Initial release.
