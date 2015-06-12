@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<polycomConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="polycomConfig.xsd">
+<!-- site.cfg -->
+    <!-- <device.sntp device.sntp.gmtOffset="-10800" device.sntp.serverName="10.50.51.205">
+      <device.sntp.gmtOffset device.sntp.gmtOffset.set="0">
+      </device.sntp.gmtOffset>
+      <device.sntp.serverName device.sntp.serverName.set="0">
+      </device.sntp.serverName>
+    </device.sntp> -->
+ 
+    <device.net device.net.IPgateway="" device.net.cdpEnabled="" device.net.ether1000BTClockLAN="" device.net.ether1000BTClockPC="" device.net.etherModeLAN="" device.net.etherModePC="" device.net.etherStormFilter="" device.net.etherVlanFilter="" device.net.lldpEnabled="" device.net.subnetMask="" device.net.vlanId="${vlanId}">
+    <device.net.vlanId device.net.vlanId.set="1">
+      </device.net.vlanId>
+    </device.net>
+    <tcpIpApp.sntp tcpIpApp.sntp.address="${ippbx}" tcpIpApp.sntp.gmtOffset="-10800" tcpIpApp.sntp.resyncPeriod="86400">
+      <tcpIpApp.sntp.address tcpIpApp.sntp.address.overrideDHCP="1">
+      </tcpIpApp.sntp.address>
+      <tcpIpApp.sntp.daylightSavings tcpIpApp.sntp.daylightSavings.enable="0" tcpIpApp.sntp.daylightSavings.fixedDayEnable="0">
+        <tcpIpApp.sntp.daylightSavings.start tcpIpApp.sntp.daylightSavings.start.date="8" tcpIpApp.sntp.daylightSavings.start.dayOfWeek="1" tcpIpApp.sntp.daylightSavings.start.month="3" tcpIpApp.sntp.daylightSavings.start.time="2">
+          <tcpIpApp.sntp.daylightSavings.start.dayOfWeek tcpIpApp.sntp.daylightSavings.start.dayOfWeek.lastInMonth="0">
+          </tcpIpApp.sntp.daylightSavings.start.dayOfWeek>
+        </tcpIpApp.sntp.daylightSavings.start>
+        <tcpIpApp.sntp.daylightSavings.stop tcpIpApp.sntp.daylightSavings.stop.date="1" tcpIpApp.sntp.daylightSavings.stop.dayOfWeek="1" tcpIpApp.sntp.daylightSavings.stop.month="11" tcpIpApp.sntp.daylightSavings.stop.time="2">
+          <tcpIpApp.sntp.daylightSavings.stop.dayOfWeek tcpIpApp.sntp.daylightSavings.stop.dayOfWeek.lastInMonth="0">
+          </tcpIpApp.sntp.daylightSavings.stop.dayOfWeek>
+        </tcpIpApp.sntp.daylightSavings.stop>
+      </tcpIpApp.sntp.daylightSavings>
+      <tcpIpApp.sntp.gmtOffset tcpIpApp.sntp.gmtOffset.overrideDHCP="1">
+      </tcpIpApp.sntp.gmtOffset>
+    </tcpIpApp.sntp>
+  <httpd httpd.enabled="0">
+    <httpd.cfg httpd.cfg.enabled="0" httpd.cfg.port="80">
+    </httpd.cfg>
+  </httpd>
+	<dialplan dialplan.applyToCallListDial="1" dialplan.applyToDirectoryDial="0" dialplan.applyToPstnDialing="0" dialplan.applyToRemoteDialing="0" dialplan.applyToTelUriDial="1" dialplan.applyToUserDial="1" dialplan.applyToUserSend="1" dialplan.digitmap="[1-8]xxx|9911|9[2-6]xxxxxxx|915xxxxxxxx|91[0-4]x|91[6-9]x|90.T|*x.T|x.T" dialplan.impossibleMatchHandling="0" dialplan.removeEndOfDial="1" dialplan.1.applyToCallListDial="1" dialplan.1.applyToDirectoryDial="0" dialplan.1.applyToTelUriDial="1" dialplan.1.applyToUserDial="1" dialplan.1.applyToUserSend="1" dialplan.1.digitmap="" dialplan.1.digitmap.timeOut="" dialplan.1.impossibleMatchHandling="0" dialplan.1.removeEndOfDial="1" dialplan.1.routing.emergency.1.server.1="0" dialplan.1.routing.emergency.1.server.2="0" dialplan.1.routing.emergency.1.server.3="0" dialplan.1.routing.emergency.1.value="" dialplan.1.routing.server.1.address="" dialplan.1.routing.server.1.port="${portpbx}" dialplan.1.routing.server.1.transport="DNSnaptr" dialplan.1.routing.emergency.2.server.1="0" dialplan.1.routing.emergency.2.server.2="0" dialplan.1.routing.emergency.2.server.3="0" dialplan.1.routing.emergency.2.value="" dialplan.1.routing.server.2.address="" dialplan.1.routing.server.2.port="${portpbx}" dialplan.1.routing.server.2.transport="DNSnaptr" dialplan.2.applyToCallListDial="1" dialplan.2.applyToDirectoryDial="0" dialplan.2.applyToTelUriDial="1" dialplan.2.applyToUserDial="1" dialplan.2.applyToUserSend="1" dialplan.2.digitmap="" dialplan.2.digitmap.timeOut="" dialplan.2.impossibleMatchHandling="0" dialplan.2.removeEndOfDial="1" dialplan.2.routing.emergency.1.server.1="0" dialplan.2.routing.emergency.1.server.2="0" dialplan.2.routing.emergency.1.server.3="0" dialplan.2.routing.emergency.1.value="" dialplan.2.routing.server.1.address="" dialplan.2.routing.server.1.port="${portpbx}" dialplan.2.routing.server.1.transport="DNSnaptr" dialplan.2.routing.emergency.2.server.1="0" dialplan.2.routing.emergency.2.server.2="0" dialplan.2.routing.emergency.2.server.3="0" dialplan.2.routing.emergency.2.value="" dialplan.2.routing.server.2.address="" dialplan.2.routing.server.2.port="${portpbx}" dialplan.2.routing.server.2.transport="DNSnaptr">
+    		<dialplan.digitmap dialplan.digitmap.timeOut="3|3|3|3|3|3">
+		</dialplan.digitmap>
+	</dialplan>
+<!-- reg-advance -->
+ <reg reg.1.acd-agent-available="0" reg.1.acd-login-logout="0" reg.1.auth.optimizedInFailover="0" reg.1.bargeInEnabled="0" reg.1.callsPerLineKey="${reg_1_callsPerLineKey}" reg.1.csta="0" reg.1.displayName="" reg.1.fwd.busy.contact="" reg.1.fwd.busy.status="0" reg.1.fwd.noanswer.contact="" reg.1.fwd.noanswer.ringCount="0" reg.1.fwd.noanswer.status="0" reg.1.lcs="0" reg.1.lineKeys="${lineKeys}" reg.1.musicOnHold.uri="" reg.1.outboundProxy.failOver.failBack.timeout="3600" reg.1.outboundProxy.failOver.failRegistrationOn="1" reg.1.outboundProxy.failOver.onlySignalWithRegistered="1" reg.1.outboundProxy.failOver.reRegisterOn="0" reg.1.outboundProxy.port="0" reg.1.outboundProxy.transport="DNSnaptr" reg.1.protocol="" reg.1.ringType="ringer2" reg.1.serverFeatureControl.cf="0" reg.1.serverFeatureControl.dnd="0" reg.1.thirdPartyName="" reg.1.type="private" reg.1.useCompleteUriForRetrieve="1" reg.1.server.1.expires="300" reg.1.server.1.expires.lineSeize="30" reg.1.server.1.expires.overlap="60" reg.1.server.1.lcs="0" reg.1.server.1.retryMaxCount="3" reg.1.server.1.retryTimeOut="0" reg.1.server.2.expires="300" reg.1.server.2.expires.lineSeize="30" reg.1.server.2.expires.overlap="60" reg.1.server.2.lcs="0" reg.1.server.2.retryMaxCount="3" reg.1.server.2.retryTimeOut="0" reg.2.acd-agent-available="0" reg.2.acd-login-logout="0" reg.2.auth.optimizedInFailover="0" reg.2.bargeInEnabled="0" reg.2.callsPerLineKey="${reg_2_callsPerLineKey}" reg.2.csta="0" reg.2.displayName="" reg.2.fwd.busy.contact="" reg.2.fwd.busy.status="0" reg.2.fwd.noanswer.contact="" reg.2.fwd.noanswer.ringCount="0" reg.2.fwd.noanswer.status="0" reg.2.lcs="0" reg.2.lineKeys="1" reg.2.musicOnHold.uri="" reg.2.outboundProxy.failOver.failBack.timeout="3600" reg.2.outboundProxy.failOver.failRegistrationOn="1" reg.2.outboundProxy.failOver.onlySignalWithRegistered="1" reg.2.outboundProxy.failOver.reRegisterOn="0" reg.2.outboundProxy.port="0" reg.2.outboundProxy.transport="DNSnaptr" reg.2.protocol="" reg.2.ringType="ringer2" reg.2.serverFeatureControl.cf="0" reg.2.serverFeatureControl.dnd="0" reg.2.thirdPartyName="" reg.2.type="private" reg.2.useCompleteUriForRetrieve="1" reg.2.server.1.expires="300" reg.2.server.1.expires.lineSeize="30" reg.2.server.1.expires.overlap="60" reg.2.server.1.lcs="0" reg.2.server.1.retryMaxCount="3" reg.2.server.1.retryTimeOut="0" reg.2.server.2.expires="300" reg.2.server.2.expires.lineSeize="30" reg.2.server.2.expires.overlap="60" reg.2.server.2.lcs="0" reg.2.server.2.retryMaxCount="3" reg.2.server.2.retryTimeOut="0">
+  </reg>
+<!-- sip-advance -->
+  <ramdisk
+        ramdisk.enable="1"
+        ramdisk.size.SPIP330 ="512"
+        ramdisk.minfree.SPIP330="2560"
+  />
+  <lcl>
+    <lcl.ml lcl.ml.lang="Spanish_Spain">
+        <lcl.ml.lang.clock
+             lcl.ml.lang.clock.5.24HourClock="0"
+             lcl.ml.lang.clock.5.dateTop="1"
+             lcl.ml.lang.clock.5.format="D,dM"
+             lcl.ml.lang.clock.5.longFormat="1"
+        </lcl.ml.lang.clock>
+      </lcl.ml.lang>
+    </lcl.ml>
+  </lcl>
+  <device  device.set="1" device.auth.localAdminPassword.set="1"
+           device.auth.localAdminPassword="109min" />
+
+<!-- reg-basic -->
+  <call call.callsPerLineKey="${call_callsPerLineKey}">
+  </call>
+      <reg
+    % for device in devices:
+        reg.${loop.index+1}.address="${device.name}" 
+        reg.${loop.index+1}.displayName="${device.name}"
+        reg.${loop.index+1}.auth.password="${device.params['password'].val}"
+        reg.${loop.index+1}.auth.userId="${device.name}"
+        reg.${loop.index+1}.label="${device.name}"
+        reg.${loop.index+1}.outboundProxy.address="${ippbx}"
+    % endfor
+    >
+    </reg>
+<!-- sip-basic -->
+  <msg>
+    <msg.mwi msg.mwi.1.callBackMode="registration" msg.mwi.2.callBackMode="registration">
+    </msg.mwi>
+  </msg>
+  <voIpProt>
+    <voIpProt.server voIpProt.server.1.address="${ippbx}" voIpProt.server.1.port="${portpbx}" voIpProt.server.2.address="" voIpProt.server.2.port="0">
+    </voIpProt.server>
+    <voIpProt.SIP voIpProt.SIP.enable="${voIpProt_SIP_enable}" voIpProt.SIP.useRFC2543hold="0" voIpProt.SIP.useSendonlyHold="1" voIpProt.SIP.useRFC3264HoldOnly="1">
+      <voIpProt.SIP.outboundProxy voIpProt.SIP.outboundProxy.address="${ippbx}">
+      </voIpProt.SIP.outboundProxy>
+    </voIpProt.SIP>
+  </voIpProt>
+</polycomConfig>

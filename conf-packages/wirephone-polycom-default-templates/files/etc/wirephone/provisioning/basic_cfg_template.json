@@ -1,0 +1,10 @@
+{
+    "call_callsPerLineKey": "",
+    "conf_template": "basic_cfg_template.xml",
+    "lineKeys": "",
+    "reg_1_callsPerLineKey": "",
+    "reg_2_callsPerLineKey": "",
+    "tcpIpApp_sntp_address": "",
+    "vlanId": "",
+    "voIpProt_SIP_enable": ""
+}
