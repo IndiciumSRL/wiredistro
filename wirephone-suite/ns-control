@@ -18,7 +18,8 @@ Depends:
         freeswitch-conf-wirephone,
         python-esl,
         supervisor,
-        fail2ban
+        fail2ban,
+        ntp
 
 Architecture: all
 Description: Wirephone Suite Meta Package
