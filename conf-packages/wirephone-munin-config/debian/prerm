@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+PKG=wirephone-munin-config
+if [ "$1" = remove ] ; then
+	[ -L /etc/munin/munin-node ] && rm /etc/munin/munin-node
+	dpkg-divert --remove --package ${PKG} --rename \
+		--divert /etc/munin/munin-node.distrib /etc/munin/munin-node
+fi
+#DEBHELPER#
+exit 0

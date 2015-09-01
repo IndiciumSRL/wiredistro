@@ -1,0 +1,36 @@
+#!/usr/bin/python2.7
+# encoding: utf-8
+"""
+wirephone_fxs
+
+Munin plugin to graph number of offhook fxs ports.
+
+Created by Joao Mesquita on 2012-11-27.
+Copyright (c) 2012 Indicium SRL. All rights reserved.
+"""
+
+import sys
+import ESL
+
+if len(sys.argv) > 1 and sys.argv[1] == 'config':
+    print "graph_title FXS offhook ports"
+    print "graph_args --base 1000 -l 0"
+    print "graph_vlabel Ports"
+    print "graph_scale no"
+    print "graph_category wirephone"
+    print "graph_printf %3.0lf"
+    print "offhook.label Offhook";
+    print "offhook.info Offhook ports";
+    print "offhook.draw AREASTACK"
+    
+    
+
+con = ESL.ESLconnection('127.0.0.1', '8021', 'ClueCon')
+e = con.api('khomp', 'show channels concise')
+resp = e.getBody()
+off = 0
+for l in resp.split():
+	s = l.split(':')
+	if len(s) >= 4 and s[3] == 'kfxsOffHook':
+	    off += 1
+print "offhook.value", off

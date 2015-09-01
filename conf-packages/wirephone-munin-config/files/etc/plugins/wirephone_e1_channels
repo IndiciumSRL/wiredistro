@@ -1,0 +1,46 @@
+#!/usr/bin/python2.7
+# encoding: utf-8
+"""
+wirephone_e1_channels
+
+Munin plugin to graph number of E1 ports.
+
+Created by Joao Mesquita on 2012-11-27.
+Copyright (c) 2012 Indicium SRL. All rights reserved.
+"""
+
+import sys
+import ESL
+
+if len(sys.argv) > 1 and sys.argv[1] == 'config':
+    print "graph_title Used E1 ports"
+    print "graph_args --base 1000 -l 0"
+    print "graph_vlabel Ports"
+    print "graph_scale no"
+    print "graph_category wirephone"
+    print "graph_printf %3.0lf"
+    print "used.label Used";
+    print "used.info Used ports";
+    print "used.draw AREASTACK"
+    
+    
+
+con = ESL.ESLconnection('127.0.0.1', '8021', 'ClueCon')
+e = con.api('khomp', 'summary concise')
+resp = e.getBody()
+boards = []
+for l in resp.split('\n')[3:]:
+	s = l.split(';')
+	if not s or not s[0]:
+	    continue
+	bid = s[0]
+	if 'E1' in s[1]:
+	    boards.append(bid)
+used = 0
+for b in boards:
+    e = con.api('khomp', 'show channels concise %s' % b)
+    for c in e.getBody().split():
+        status = c.split(':')[-1]
+	if status != 'kecsFree':
+		used += 1
+print 'used.value', used

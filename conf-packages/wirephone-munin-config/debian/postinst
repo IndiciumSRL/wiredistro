@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+PKG=wirephone-munin-config
+
+if [ "$1" = configure ] ; then
+	dpkg-divert --add --package ${PKG} --rename \
+		--divert /etc/munin/munin-node.conf.distrib /etc/munin/munin-node.conf
+	[ \! -e /etc/munin/munin-node.conf -o -L /etc/munin/munin-node ] && ln -sf /etc/site/munin/munin-node /etc/munin/munin-node
+	invoke-rc.d munin-node restart
+fi
+#DEBHELPER#
+exit 0

@@ -1,0 +1,31 @@
+#!/usr/bin/python2.7
+# encoding: utf-8
+"""
+wirephone_calls
+
+Munin plugin to graph number of active calls.
+
+Created by Joao Mesquita on 2012-11-27.
+Copyright (c) 2012 Indicium SRL. All rights reserved.
+"""
+
+import sys
+import ESL
+
+if len(sys.argv) > 1 and sys.argv[1] == 'config':
+    print "graph_title Active Calls"
+    print "graph_args --base 1000 -l 0"
+    print "graph_vlabel Channels"
+    print "graph_scale no"
+    print "graph_category wirephone"
+    print "graph_printf %3.0lf"
+    print "calls.label Calls";
+    print "calls.info Active Calls";
+    print "calls.draw AREASTACK"
+    
+    
+
+con = ESL.ESLconnection('127.0.0.1', '8021', 'ClueCon')
+e = con.api('show', 'calls count')
+resp = e.getBody()
+print "calls.value", resp.split()[0]

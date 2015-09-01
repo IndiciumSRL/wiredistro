@@ -1,0 +1,33 @@
+#!/usr/bin/python2.6
+# encoding: utf-8
+"""
+wiregui_users.py
+
+Munin plugin to graph number of WireGui sessions.
+
+Created by Joao Mesquita on 2012-11-27.
+Copyright (c) 2012 Indicium SRL. All rights reserved.
+"""
+
+import sys
+import zmq
+
+if len(sys.argv) > 1 and sys.argv[1] == 'config':
+    print "graph_title Active Sessions"
+    print "graph_args --base 1000 -l 0"
+    print "graph_vlabel Users"
+    print "graph_scale no"
+    print "graph_category wiregui"
+    print "graph_printf %3.0lf"
+    print "sessions.label Sessions";
+    print "sessions.info Sessions logged in";
+    print "sessions.colour FF0000";
+    
+    
+
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.connect('tcp://%s:%s' % ("127.0.0.1", "7777"))
+socket.send_multipart(['status'])
+response = socket.recv_json()
+print "sessions.value", response["message"]["session_count"]
