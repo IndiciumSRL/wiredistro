@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+PKG=wirephone-nagios-config
+if [ "$1" = remove ] ; then
+	[ -L /etc/nagios/nrpe ] && rm /etc/nagios/nrpe
+	dpkg-divert --remove --package ${PKG} --rename \
+		--divert /etc/nagios/nrpe.distrib /etc/nagios/nrpe
+fi
+#DEBHELPER#
+exit 0

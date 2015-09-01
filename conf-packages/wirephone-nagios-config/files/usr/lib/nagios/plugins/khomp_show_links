@@ -1,0 +1,30 @@
+#!/usr/bin/python2.6
+import os
+import sys
+from subprocess import Popen, PIPE, STDOUT
+
+command = '/usr/local/freeswitch/bin/fs_cli -x \"khomp show links\"'
+critical = False
+num = []
+link = False
+
+p = Popen(command,shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT)
+for e in p.stdout:
+        if "Link " in e:
+                link = True
+                data = e.split(' ')
+                data2 = data[2].split('\'')
+                if not "Inactive" in e:
+                	if not "Up" in e:
+                        	num.append(data2[1])
+                        	critical = True;
+
+if critical:
+        print 'Links ' + str(num) +' with problems'
+        sys.exit(2) # CRITICAL
+if link:
+        print 'All Links are UP'
+        sys.exit(0) #OK
+
+print 'No Links present'
+sys.exit(0) #OK

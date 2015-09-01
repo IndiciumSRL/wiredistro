@@ -1,0 +1,22 @@
+#!/usr/bin/python
+import os
+import sys
+from subprocess import Popen, PIPE, STDOUT
+
+command = '/usr/local/freeswitch/bin/fs_cli -x \"khomp show channels\"'
+critical = False;
+num = []
+
+p = Popen(command,shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT)
+for e in p.stdout:
+        if "R2Arg" in e:
+                data = e.split('|')
+                if "Busy" in data[4] and "unused" in data[2]:
+                        num.append(data[1])
+                        critical = True;
+
+if critical:
+        print 'Channels '+ str(num) +' are locked'
+        sys.exit(2) # CRITICAL
+print 'all channels are OK'
+sys.exit(0) #OK
