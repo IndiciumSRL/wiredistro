@@ -8,7 +8,7 @@ if [ "$1" = configure ] ; then
 	dpkg-divert --add --package ${PKG} --rename \
 		--divert /etc/nagios/nrpe.cfg.distrib /etc/nagios/nrpe.cfg
 	[ \! -e /etc/nagios/nrpe.cfg -o -L /etc/nagios/nrpe ] && ln -sf /etc/site/nagios/nrpe /etc/nagios/nrpe
-	invoke-rc.d ssh restart
+	invoke-rc.d nagios-nrpe-server restart
 fi
 #DEBHELPER#
 exit 0
