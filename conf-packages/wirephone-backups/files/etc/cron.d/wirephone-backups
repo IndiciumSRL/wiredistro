@@ -1,0 +1,7 @@
+#
+# Cron Jobs for Wirephone-suite backups
+#
+
+2 0 * * * root /root/backups/scripts/pg_backup_rotated.sh > /dev/null
+32 0 * * * root /usr/bin/python2.6 /root/backups/scripts/backup-maker.py > /dev/null
+2 1 * * * root find /root/backups/files/ -type f -mtime +10 -exec /bin/rm -f {} \;
