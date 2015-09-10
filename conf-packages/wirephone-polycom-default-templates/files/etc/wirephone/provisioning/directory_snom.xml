@@ -1,0 +1,10 @@
+<tbook e="2">
+    % for c in ab :
+    <item context="active" type="" fav="false" mod="true" index="${loop.index}">
+       <number>${c['mobile_phone']}</number>
+       <!-- types are sip cell fixed private business -->
+       <number_type>fixed</number_type>
+       <first_name>${c['name']}</first_name>
+    </item>
+    % endfor
+</tbook>
