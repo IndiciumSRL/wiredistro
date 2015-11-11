@@ -6,5 +6,8 @@
     <binding name="directory">
       <param name="gateway-url" value="http://127.0.0.1:8000/directory" bindings="directory"/>
     </binding>
+    <binding name="configuration">
+      <param name="gateway-url" value="http://127.0.0.1:8000/configuration" bindings="configuration"/>
+    </binding>
   </bindings>
 </configuration>

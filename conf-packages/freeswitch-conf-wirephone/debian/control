@@ -26,6 +26,8 @@ Depends: ${misc:Depends}
   freeswitch-mod-sndfile,
   freeswitch-mod-tone-stream,
   freeswitch-mod-lua,
+  freeswitch-mod-khomp,
+  Khomp-k3l,
   freeswitch-mod-console,
   freeswitch-mod-say-en,
   freeswitch-mod-say-es-ar,
