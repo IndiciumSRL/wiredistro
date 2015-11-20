@@ -16,6 +16,7 @@ Depends:
 	wirephone-root-config,
 	wirephone-sshd-config,
     freeswitch-conf-wirephone,
+    wirephone-wireportal-ui,
     python-esl,
     supervisor,
     fail2ban,

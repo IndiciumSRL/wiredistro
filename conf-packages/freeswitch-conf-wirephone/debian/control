@@ -9,7 +9,7 @@ Package: freeswitch-conf-wirephone
 Architecture: all
 Depends: ${misc:Depends}
   freeswitch,
-  freeswitch-sysv-init,
+  freeswitch-init,
   freeswitch-mod-voicemail,
   freeswitch-mod-sofia,
   freeswitch-mod-loopback,
