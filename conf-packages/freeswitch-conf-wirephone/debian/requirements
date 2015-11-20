@@ -1,5 +1,5 @@
 freeswitch
-freeswitch-sysv-init
+freeswitch-init
 freeswitch-mod-voicemail
 freeswitch-mod-sofia
 freeswitch-mod-loopback
@@ -17,7 +17,7 @@ freeswitch-mod-sndfile
 freeswitch-mod-tone-stream
 freeswitch-mod-lua
 freeswitch-mod-khomp
-Khomp-k3l
+khomp-k3l
 freeswitch-mod-console
 freeswitch-mod-say-en
 freeswitch-mod-say-es-ar
