@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root_group>
+    <group display_name="All Contacts" ring="" />
+    <group display_name="Blacklist" ring="" />
+</root_group>
+<root_contact>
+    % for c in ab :
+    <contact display_name="${c['name']}" office_number="${c['work_phone']}" mobile_number="${c['mobile_phone']}" other_number="${c['home_phone']}" line="0" ring="Auto" group_id_name="All Contacts" />
+    % endfor
+</root_contact>

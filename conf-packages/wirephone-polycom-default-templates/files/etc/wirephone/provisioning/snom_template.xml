@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+ <phone-settings>
+% for line in lines:
+  <user_pname idx="${loop.index+1}" perm="R">${line.name}</user_pname>
+  <user_pass idx="${loop.index+1}" perm="R">${line.params['password'].val}</user_pass>
+  <user_name idx="${loop.index+1}" perm="R">${line.name}</user_name>
+  <user_realname idx="${loop.index+1}" perm="R">${line.name}</user_realname>
+  <user_host idx="${loop.index+1}" perm="R">${profile.params['sip-ip'].val}</user_host>
+  <!--<user_srtp idx="${loop.index+1}" perm="RW">off</user_srtp>-->
+  <!--<user_dp_str idx="${loop.index+1}" perm="">!([^#]%2b)#!sip:\1@\d!d</user_dp_str>-->
+% endfor
+
+  <!-- the following parameters are only required to provide automated firmware updates for specific phones -->
+  <!-- IMPORTANT: define the URL of the firmware setting file -->
+  % if params.get('firmware'):
+  <firmware_status perm="R">${params['firmware']}</<firmware_status>
+  % endif
+  <!-- additionally the update policy may be defined -->
+  <!--<update_policy perm="R">auto_update</update_policy>-->
+  <!-- additionally the firmware update interval may be defined -->
+  <!--<firmware_interval perm="R">2880 </firmware_interval>-->
+ </phone-settings>
+
+<functionKeys>
+ % for key in keys:
+ % if key.key_type == 0:
+ <fkey idx="${key.key_order}" context="active" perm="">blf ${key.sofia_user.name}</fkey>
+ % elif key.key_type == 1:
+<fkey idx="${key.key_order}" context="active" perm="">speed ${key.sofia_user.name}</fkey>
+ % elif key.key_type == 2:
+<fkey idx="${key.key_order}" context="active" perm="">line ${key.sofia_user.name}</fkey>
+ % endif
+ % endfor
+</functionKeys>
+
+ <setting-files>
+  <file url="http://192.168.200.241:8081/provisioning/${mac}_directory.xml" />
+ </setting-files>
+
+</settings>
