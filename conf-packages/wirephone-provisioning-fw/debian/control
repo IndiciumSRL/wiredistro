@@ -1,0 +1,12 @@
+Source: wirephone-provisioning-fw
+Section: config
+Priority: extra
+Maintainer: Indicium SRL <info@indicium.com.ar>
+Build-Depends: debhelper (>= 4.2.0)
+Standards-Version: 3.8.0
+
+Package: wirephone-provisioning-fw
+Architecture: all
+Depends: ${misc:Depends}, python-wireportalbackend 
+Description: Firmware files for provisioning upgrades
+ Firmware files for provisioning upgrades. 

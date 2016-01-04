@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- $Revision: 1.2 $  $Date: 2004/12/21 18:28:05 $ -->
+<directory>
+    <item_list>
+            % for key in keys :
+            % if key.key_type == 1:
+                    <item><ln>${key.sofia_user.name}</ln><ct>${key.sofia_user.name}</ct><sd>${key.key_order}</sd></item>
+            % endif
+            % endfor
+            % for c in ab :
+            <item><ln>${c['name']}</ln><fn>${c['email']}</fn><ct>${c['mobile_phone']}</ct></item>
+            % endfor
+    </item_list>
+</directory>
